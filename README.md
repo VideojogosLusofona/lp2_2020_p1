@@ -30,34 +30,76 @@ discussão do projeto incidirá essencialmente na forma como construíram as
 
 ## Funcionamento da aplicação
 
-A aplicação deve permitir fazer pesquisas a **planetas** e **estrelas**.
+A aplicação deve permitir fazer pesquisas a **planetas** e **estrelas**,
+separadamente, e também em conjunto para quem implementar a [versão
+avançada](#versão-avançada).
+
+A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
+não-interativa (apenas consola), tal como descrito em [Formas de
+implementação](#formas-de-implementação). Em qualquer dos casos, a aplicação
+deve ter as seguintes funcionalidades:
+
+* Abrir o ficheiro de dados e criar uma lista de planetas e uma lista de
+  estrelas. Os dados de cada estrela devem ser obtidos no ficheiro de dados a
+  partir dos planetas que as orbitam (ver secção [Campos de
+  interesse](#campos-de-interesse)).
+* Fazer pesquisas por planetas usando os campos específicos de planeta.
+  * Na [versão avançada](#versão-avançada) deve ser possível também incluir
+    campos de estrela na pesquisa de planetas.
+* Fazer pesquisas por estrelas usando os campos específicos de estrela.
+  * Na [versão avançada](#versão-avançada) deve ser possível também incluir
+    campos de planeta na pesquisa de estrelas.
+* Os campos numéricos devem permitir especificar um valor de pesquisa mínimo e
+  um valor de pesquisa máximo.
+* Os campos de texto devem verificar se o valor de pesquisa é uma _substring_
+  do campo em questão dos planetas ou estrelas, e esta pesquisa deve ser
+  independente de maiúsculas ou minúsculas.
+* Caso um utilizador não indique qualquer um dos campos de pesquisa, a aplicação
+  deve assumir que não existe qualquer restrição (sendo possível, por exemplo,
+  especificar apenas um valor mínimo para dado campo mas não o máximo).
+* Deve ser possível ordenar os resultados da pesquisa por qualquer um dos
+  campos utilizados, tanto de forma ascendente como de forma descendente.
+  * Serão valorizadas soluções que permitam aplicar um critério de ordenação
+    secundário (usado quando existe um empate no critério primário).
+* Ver informação detalhada sobre um planeta.
+* Ver informação detalhada sobre uma estrela.
+* Não _crashar_ com exceções, mas sim mostrar ao utilizador, de forma elegante,
+  possíveis erros que possam ocorrer (por exemplo, na leitura do ficheiro).
+
+### Formas de implementação
+
+A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
+não-interativa (apenas consola), tal como descrito nas secções seguintes.
+#### Aplicação interativa
+
+Na implementação interativa (em Unity ou consola), deve aparecer inicialmente
+uma caixa de diálogo na qual o utilizador pode especificar o ficheiro a abrir.
+Uma vez aberto com sucesso o ficheiro, devem aparecer as opções de pesquisar
+planetas e pesquisar estrelas. Selecionando uma das opções de pesquisa, deve
+então aparecer um UI que permita especificar os vários campos a filtrar, bem
+como especificar o(s) critério(s) de ordenação, contendo ainda uma opção para
+iniciar a pesquisa com os dados inseridos.
 
 _Em construção_
 
-<!--Usar programação por objetos, com lista de estrelas e lista de planetas e ligadas entre eles
+A qualquer momento deve ser possível voltar atrás (incluíndo abrir um novo
+ficheiro), bem como sair da aplicação.
 
-Abrir ficheiro
-Procura de planetas | Procura de estrelas
-Menu de procura em cima, procura atualizada em tempo real em baixo
-String contains: pl_name
-Optional and student chose how to: method
-Others: All numbers, require min and max, differentiate between float and int
-No value == dont use in search
+
+<!--
+
 
 Lista atualizada é percorrível e scrolável, deve permitir ver detalhes do
 planeta ou estrela ao carregar enter
 
 Quando no menu planeta ou estrela, deve ser possível ver a estrela ou planetas
 associados, scrolando
+-->
 
-Isto dito em cima podem ser layers de avaliação
 
-A aplicação deve mostrar ao utilizador um menu de pesquisa de títulos, e caso
-implementem a [Fase 4], um menu de pesquisa de pessoas. Em qualquer dos casos,
-deve ser possível usar como critérios de pesquisa os campos indicados em cada
-uma das [fases de desenvolvimento]. Deve também ser possível usar qualquer um
-destes campos como critério de ordenação, exceto se existir indicação em
-contrário.
+<!--
+
+
 
 Os resultados devem aparecer na forma de uma lista, mostrando para cada item
 dois ou três campos que consideram importantes. Por exemplo, no caso dos
@@ -83,23 +125,65 @@ dados.
 
 Ordenar os resultados das pesquisas
 
-Adicionalmente, o utilizador deve ter a opção de ver diretamente a tela de
-informação do título pai.
+Adicionalmente, o utilizador deve ter a opção de ver diretamente a estrela
+associada a um planeta, ou os planetas associados a uma estrela.
 
-Na tela de informação de um título pai, deve existir a opção adicional de
-fazer uma pesquisa automática pelos respetivos títulos filho. Na lista
+Na tela de informação de uma estrela, deve existir a opção adicional de
+fazer uma pesquisa automática pelos respetivos planetas. Na lista
 "rolável" que aparecerá depois com os resultados desta procura, o utilizador
-poderá naturalmente clicar/selecionar um destes títulos filho, aparecendo então
-uma tela de informação sobre o título filho selecionado (que por sua vez tem a
-opção de ver a diretamente a tela de informação do título pai, e por ai fora).
+poderá naturalmente clicar/selecionar um destes planetas, aparecendo então
+uma tela de informação sobre o planeta selecionado (que por sua vez tem a
+opção de ver a diretamente a tela de informação da sua estrela, e por ai fora).
 
-### Fase avançada: pesquisa em várias tabelas
+
+nunca dá excepção ao user se o ficheiro for inválido. excepções têm de ser
+tratadas e o erro a mostrar deverá ser user friendly.
+
+-->
+
+#### Aplicação não-interativa em consola
+
+Nesta versão a aplicação não tem qualquer UI, funcionando inteiramente com
+opções passadas na linha de comandos
+
+_Em construção_
+
+### Versão avançada
+
+_Em construção_
+
+<!--
+
+Fase avançada: pesquisa em várias tabelas
+
+Permite ultrapassar a limitação de 2.5 valores.
 
 Misturar pesquisa de planetas com dados de estrelas e vice-versa.
 
 Além disso, não
 incluí código importante a nível do LINQ para fases posteriores, nomeadamente o
 método [Join()] (também disponível na forma de [expressão de *query*][join]).-->
+
+### Compatibilidade
+
+Caso seja implementada em consola, a aplicação deve funcionar em Windows, macOS
+e Linux. A melhor estratégia para garantir que assim seja é testar a aplicação
+em Linux (e.g., numa máquina virtual). Algumas instruções incompatíveis com
+macOS e Linux são, por exemplo:
+
+* [Console.Beep()](https://docs.microsoft.com/dotnet/api/system.console.beep)
+* [Console.SetBufferSize()](https://docs.microsoft.com/dotnet/api/system.console.setbuffersize)
+* [Console.SetWindowPosition()](https://docs.microsoft.com/dotnet/api/system.console.setwindowposition)
+* [Console.SetWindowSize()](https://docs.microsoft.com/dotnet/api/system.console.setwindowsize)
+* Entre outras.
+
+As instruções que só funcionam em Windows têm a seguinte indicação na sua
+documentação:
+
+![The current operating system is not Windows.](img/notsupported.png "The current operating system is not Windows.")
+
+Os projetos Unity geralmente funcionam bem em Linux e macOS, mesmo que sejam
+desenvolvidos em Windows.
 
 ## Ficheiro de dados
 
@@ -214,6 +298,38 @@ regra não serão avaliados.
 * Se o ficheiro indicado tiver um formato inválido, a aplicação deve mostrar uma
   mensagem de erro apropriada.
 
+## Organização do projeto e estrutura de classes
+
+<!--
+
+Usar programação por objetos, com lista de estrelas e lista de planetas e ligadas entre eles
+
+single responsibility: classe controladora, classe GUI/UI, classe que abre
+o ficheiro e produz as listas, classe que faz as queries
+
+-->
+
+_Em construção_
+
+
+O projeto deve estar devidamente organizado, fazendo uso de classes, `struct`s
+e/ou enumerações, conforme seja mais apropriado. Cada tipo (i.e., classe,
+`struct` ou enumeração) deve ser colocado num ficheiro com o mesmo nome. Por
+exemplo, uma classe chamada `Star` deve ser colocada no ficheiro `Star.cs`.
+Por sua vez, a escolha da coleção ou coleções a usar também deve ser adequada
+ao problema.
+
+A estrutura de classes deve ser bem pensada e organizada de forma lógica,
+fazendo uso de *design patterns* quando e se apropriado. Em particular, o
+projeto deve ser desenvolvido tendo em conta os princípios de programação
+orientada a objetos, como é o caso, entre outros, dos princípios [SOLID].
+
+Estes princípios devem ser balanceados com o princípio [KISS], crucial no
+desenvolvimento de qualquer aplicação.
+
+É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
+projeto.
+
 ### Sugestões de otimização
 
 O ficheiro de dados pode ser grande, pelo que pode ser útil fazer algumas
@@ -234,25 +350,7 @@ fim, nomeadamente:
   prejudicar o desempenho e até *crashar* a aplicação. O [LINQ] tem formas de
   devolver apenas alguns resultados de cada vez, evitando esta situação.
 
-## Organização do projeto e estrutura de classes
 
-O projeto deve estar devidamente organizado, fazendo uso de classes, `struct`s
-e/ou enumerações, conforme seja mais apropriado. Cada tipo (i.e., classe,
-`struct` ou enumeração) deve ser colocado num ficheiro com o mesmo nome. Por
-exemplo, uma classe chamada `Star` deve ser colocada no ficheiro `Star.cs`.
-Por sua vez, a escolha da coleção ou coleções a usar também deve ser adequada
-ao problema.
-
-A estrutura de classes deve ser bem pensada e organizada de forma lógica,
-fazendo uso de *design patterns* quando e se apropriado. Em particular, o
-projeto deve ser desenvolvido tendo em conta os princípios de programação
-orientada a objetos, como é o caso, entre outros, dos princípios [SOLID].
-
-Estes princípios devem ser balanceados com o princípio [KISS], crucial no
-desenvolvimento de qualquer aplicação.
-
-É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
-projeto.
 
 ## Objetivos e critério de avaliação
 
@@ -290,6 +388,8 @@ Este projeto tem os seguintes objetivos:
       opcional, pois podem preferir desenvolver o projeto num repositório
       privado.
   * Arquitetura da solução:
+    * Indicação da forma de implementação (interativo Unity/consola ou
+      não-interativo consola).
     * Descrição da solução, com breve explicação de como o programa foi
       organizado, indicação das coleções usadas e porquê, bem como dos
       algoritmos utilizados (e.g., para fazer *parsing* do ficheiro CSV),
