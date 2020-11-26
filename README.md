@@ -131,7 +131,7 @@ dotnet run -p AstroFinder -- search-planets --method "transit" --year-max 2010
 dotnet run -p AstroFinder -- planet-info "proxima cen b"
 ```
 
-Por omissão, o _output_ deve ser aparecer formatado e fácil de ler, em forma de
+Por omissão, o _output_ deve aparecer formatado e fácil de ler, em forma de
 lista (mesmo que se pretenda apenas a informação sobre um planeta ou estrela,
 caso no qual a lista a apresentar terá tamanho 1). No caso do último comando, o
 _output_ poderia ser algo do género:
@@ -341,26 +341,21 @@ regra não serão avaliados.
 * Cada campo de interesse que estiver disponível deve ser convertível para o seu
   tipo esperado (por exemplo, se o ano de descoberta for representado por letras
   e não dígitos). Caso contrário o ficheiro deve ser considerado inválido.
+  * Ver a secção
+    [Conversão e impressão de números reais](#conversão-e-impressão-de-números-reais)
+    de modo a garantir que os números reais são convertidos adequadamente.
 * O ficheiro também deve ser considerado inválido se o número de campos em
   alguma das linhas não corresponder ao número de colunas indicado no cabeçalho
   (cabeçalho esse que contém o nome dos campos).
 * Se o ficheiro indicado tiver um formato inválido, a aplicação deve mostrar uma
   mensagem de erro apropriada.
 
-## Organização do projeto e estrutura de classes
+## Dicas e sugestões
 
-<!--
+### Organização do projeto e estrutura de classes
 
-Usar programação por objetos, com lista de estrelas e lista de planetas e ligadas entre eles
-
-single responsibility: classe controladora, classe GUI/UI, classe que abre
-o ficheiro e produz as listas, classe que faz as queries
-
--->
-
-_Em construção_
-
-
+A aplicação deve ser implementada totalmente por objetos, devendo existir
+coleções de de planetas e coleções de estrelas.
 O projeto deve estar devidamente organizado, fazendo uso de classes, `struct`s
 e/ou enumerações, conforme seja mais apropriado. Cada tipo (i.e., classe,
 `struct` ou enumeração) deve ser colocado num ficheiro com o mesmo nome. Por
@@ -372,12 +367,29 @@ A estrutura de classes deve ser bem pensada e organizada de forma lógica,
 fazendo uso de *design patterns* quando e se apropriado. Em particular, o
 projeto deve ser desenvolvido tendo em conta os princípios de programação
 orientada a objetos, como é o caso, entre outros, dos princípios [SOLID].
-
 Estes princípios devem ser balanceados com o princípio [KISS], crucial no
 desenvolvimento de qualquer aplicação.
 
 É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
 projeto.
+
+
+### Sugestão para arquitetura do projeto
+
+Seja em consola ou Unity, um bom modelo para começar a organizar as classes
+deste projeto é o seguinte:
+
+* Uma classe controladora central que guia o programa. Tudo o que acontece
+  no programa tem início nesta classe.
+* Uma classe exclusivamente dedicada ao UI.
+* Uma classe cuja responsabilidade é apenas abrir o ficheiro e produzir as
+  coleções necessárias de planetas e estrelas.
+* Uma classe cuja única responsabilidade é realizar _queries_ e devolver os
+  resultados.
+
+Esta sugestão é apenas um ponto de partida, pois poderão ser necessárias mais
+classes/tipos para obter uma boa arquitetura. Dependendo da implementação,
+também é possível obter bons designs com abordagens ligeiramente diferentes.
 
 ### Sugestões de otimização
 
@@ -399,7 +411,62 @@ fim, nomeadamente:
   prejudicar o desempenho e até *crashar* a aplicação. O [LINQ] tem formas de
   devolver apenas alguns resultados de cada vez, evitando esta situação.
 
+### Conversão e impressão de números reais
 
+De modo a converter uma _string_ num número real (neste caso, um `double`),
+usa-se tipicamente uma das seguintes abordagens:
+
+```cs
+// s é uma string, x é um double
+x = Convert.ToDouble(s);   // Abordagem 1
+x = double.Parse(s);       // Abordagem 2
+double.TryParse(s, out x); // Abordagem 3 (preferida)
+```
+
+A última forma é a preferida, pois permite-nos verificar se a conversão foi
+inválida. No entanto pode ocorrer um problema caso o PC esteja configurado com
+a língua portuguesa, na qual o separador decimal é uma vírgula e não um ponto.
+Para evitar este problema, podemos indicar ao C# que pretendemos uma conversão
+independente da língua configurada no computador, assumindo o ponto como
+separador decimal:
+
+```cs
+// Requer using extra no início da classe
+using System.Globalization;
+//...
+// s é uma string, x é um double
+x = Convert.ToDouble(s, CultureInfo.InvariantCulture);               // Abordagem 1
+x = double.Parse(s, NumberStyles.Any, CultureInfo.InvariantCulture); // Abordagem 2
+double.TryParse(s, NumberStyles.Any, CultureInfo.InvariantCulture, out x); // Abordagem 3 (preferida)
+```
+
+Notar que a abordagem com `TryParse()` é normalmente usada com um `if`:
+
+```cs
+if (double.TryParse(...))
+{
+    // Conversão feita com sucesso
+}
+else
+{
+    // Conversão falhou
+}
+```
+
+Pode existir um problema semelhante na impressão de números reais, problema esse
+que pode ser relevante na versão não-interativa em consola com a opção `--csv`.
+Nesse caso, os números reais devem ser explicitamente convertidos em `string`
+antes de serem impressos. Por exemplo:
+
+```cs
+// Requer using extra no início da classe
+using System.Globalization;
+//...
+// Imprime 4,5 se computador estiver configurado em Português
+Console.WriteLine(4.5f);
+// Imprime 4.5 seja qual for a localização do computador
+Console.WriteLine(4.5f.ToString(CultureInfo.InvariantCulture));
+```
 
 ## Objetivos e critério de avaliação
 
