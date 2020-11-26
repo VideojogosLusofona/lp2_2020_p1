@@ -56,7 +56,7 @@ deve ter as seguintes funcionalidades:
   independente de maiúsculas ou minúsculas.
 * Caso um utilizador não indique qualquer um dos campos de pesquisa, a aplicação
   deve assumir que não existe qualquer restrição (sendo possível, por exemplo,
-  especificar apenas um valor mínimo para dado campo mas não o máximo).
+  especificar apenas um valor mínimo para dado campo e não o máximo).
 * Deve ser possível ordenar os resultados da pesquisa por qualquer um dos
   campos utilizados, tanto de forma ascendente como de forma descendente.
   * Serão valorizadas soluções que permitam aplicar um critério de ordenação
@@ -70,6 +70,7 @@ deve ter as seguintes funcionalidades:
 
 A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
 não-interativa (apenas consola), tal como descrito nas secções seguintes.
+
 #### Aplicação interativa
 
 Na implementação interativa (em Unity ou consola), deve aparecer inicialmente
@@ -77,69 +78,30 @@ uma caixa de diálogo na qual o utilizador pode especificar o ficheiro a abrir.
 Uma vez aberto com sucesso o ficheiro, devem aparecer as opções de pesquisar
 planetas e pesquisar estrelas. Selecionando uma das opções de pesquisa, deve
 então aparecer um UI que permita especificar os vários campos a filtrar, bem
-como especificar o(s) critério(s) de ordenação, contendo ainda uma opção para
-iniciar a pesquisa com os dados inseridos.
+como indicar o(s) critério(s) de ordenação. Idealmente este UI terá espaço para
+a apresentação dos resultados, sendo possível alterar critérios de pesquisa
+e de ordenação
 
-_Em construção_
+Os resultados devem aparecer na forma de uma lista, mostrando todos os campos de
+cada item. No caso dos planetas, a informação sobre a estrela deve resumir-se ao
+seu nome. No caso de estrelas, a informação sobre os seus planetas deve
+resumir-se ao seu número. Se o projeto for desenvolvido em consola, podem ser
+apresentados 20 ou 30 itens de cada vez, sendo necessário que o utilizador
+pressione uma tecla para ver os próximos 20/30 itens. Por outro lado, se se
+tratar de um projeto Unity, a lista de jogos deve ser *scrollable* ("rolável")
+para cima e para baixo. Também é possível ter uma lista "rolável" em modo
+consola, como implementado na solução do [2º projeto de LP1 2018/19].
+
+Deve ser possível clicar ou selecionar um dos resultados da lista, caso no qual
+aparecerá uma nova tela/janela mostrando os detalhes (campos) do item em
+questão, mas por extenso e mostrando as unidades (e.g. km/s) no caso de campos
+numéricos. No caso da tela/janela de informação sobre um planeta, deve também
+aparecer agora a informação completa sobre a estrela que orbita. No caso da
+tela/janela de informação sobre uma estrela, deve aparecer uma lista dos nomes
+dos planetas que a orbitam.
 
 A qualquer momento deve ser possível voltar atrás (incluíndo abrir um novo
 ficheiro), bem como sair da aplicação.
-
-
-<!--
-
-
-Lista atualizada é percorrível e scrolável, deve permitir ver detalhes do
-planeta ou estrela ao carregar enter
-
-Quando no menu planeta ou estrela, deve ser possível ver a estrela ou planetas
-associados, scrolando
--->
-
-
-<!--
-
-
-
-Os resultados devem aparecer na forma de uma lista, mostrando para cada item
-dois ou três campos que consideram importantes. Por exemplo, no caso dos
-títulos deve aparecer o seu tipo, o título principal e o ano de lançamento.
-Se o projeto for desenvolvido em consola, podem ser apresentados 20 ou 30 itens
-de cada vez, sendo necessário que o utilizador pressione uma tecla para ver os
-próximos 20/30 itens. Por outro lado, se se tratar de um projeto Unity, a lista
-de jogos deve ser *scrollable* ("rolável") para cima e para baixo. Também é
-possível ter uma lista "rolável" em modo consola, como implementado na solução
-do [2º projeto de LP1 2018/19].
-
-Deve ser possível clicar ou selecionar um dos resultados da lista, caso no qual
-aparecerá uma nova tela/janela mostrando os detalhes do item em questão. Estes
-detalhes sao exatamente aqueles pelos quais é possível pesquisar. Nas fases
-[3][Fase 3] e [4][Fase 4] existem possibilidades adicionais de interação quando
-se chega a esta tela, como referido adiante.
-
-
-
-No caso do **Discovery method**, serão valorizadas soluções que permitam
-ao utilizador escolher apenas entre os tipos e/ou géneros existentes na base de
-dados.
-
-Ordenar os resultados das pesquisas
-
-Adicionalmente, o utilizador deve ter a opção de ver diretamente a estrela
-associada a um planeta, ou os planetas associados a uma estrela.
-
-Na tela de informação de uma estrela, deve existir a opção adicional de
-fazer uma pesquisa automática pelos respetivos planetas. Na lista
-"rolável" que aparecerá depois com os resultados desta procura, o utilizador
-poderá naturalmente clicar/selecionar um destes planetas, aparecendo então
-uma tela de informação sobre o planeta selecionado (que por sua vez tem a
-opção de ver a diretamente a tela de informação da sua estrela, e por ai fora).
-
-
-nunca dá excepção ao user se o ficheiro for inválido. excepções têm de ser
-tratadas e o erro a mostrar deverá ser user friendly.
-
--->
 
 #### Aplicação não-interativa em consola
 
@@ -162,7 +124,26 @@ Misturar pesquisa de planetas com dados de estrelas e vice-versa.
 
 Além disso, não
 incluí código importante a nível do LINQ para fases posteriores, nomeadamente o
-método [Join()] (também disponível na forma de [expressão de *query*][join]).-->
+método [Join()] (também disponível na forma de [expressão de *query*][join]).
+
+
+No caso de planetas, deve existir a opção de ver os detalhes da
+estrela associada. No caso da estrela, deve existir a opção de ver uma lista
+dos planetas associados (na prática é realizada uma procura de planetas)
+
+
+Adicionalmente, o utilizador deve ter a opção de ver diretamente a estrela
+associada a um planeta, ou os planetas associados a uma estrela.
+
+Na tela de informação de uma estrela, deve existir a opção adicional de
+fazer uma pesquisa automática pelos respetivos planetas. Na lista
+"rolável" que aparecerá depois com os resultados desta procura, o utilizador
+poderá naturalmente clicar/selecionar um destes planetas, aparecendo então
+uma tela de informação sobre o planeta selecionado (que por sua vez tem a
+opção de ver a diretamente a tela de informação da sua estrela, e por ai fora).
+
+
+-->
 
 ### Compatibilidade
 
@@ -226,7 +207,8 @@ restantes:
 * `st_teff` - Temperatura efetiva da estrela (em Kelvins).
 * `st_rad` - Raio da estrela (em comparação com o Sol).
 * `st_mass` - Massa da estrela (em comparação com o Sol).
-* `st_age`- Idade da estrela (em Giga-anos, ou seja, por milhar de milhão de anos).
+* `st_age`- Idade da estrela (em Giga-anos, ou seja, por milhar de milhão de
+  anos).
 * `st_vsin` - Velocidade de rotação da estrela (em km/s).
 * `st_rotp` - Período de rotação da estrela (em dias).
 * `sy_dist` - Distância entre a Terra e a estrela (em Parsecs, sendo 1 Parsec ≈
