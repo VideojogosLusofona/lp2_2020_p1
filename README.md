@@ -30,14 +30,16 @@ discussão do projeto incidirá essencialmente na forma como construíram as
 
 ## Funcionamento da aplicação
 
-A aplicação deve permitir fazer pesquisas a **planetas** e **estrelas**,
-separadamente, e também em conjunto para quem implementar a [versão
-avançada](#versão-avançada).
+A versão standard da aplicação deve permitir fazer pesquisas a **planetas** e
+**estrelas**, separadamente, e terá uma nota máxima de 2.5 valores (em 3
+possíveis). A [versão avançada](#versão-avançada) requer que as pesquisas possam
+ser feitas com campos de planetas e estrelas ao mesmo tempo (por exemplo, listar
+todos os planetas que orbitam uma estrela 10x maior que o sol).
 
 A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
 não-interativa (apenas consola), tal como descrito em [Formas de
 implementação](#formas-de-implementação). Em qualquer dos casos, a aplicação
-deve ter as seguintes funcionalidades:
+standard (não avançada) deve ter as seguintes funcionalidades:
 
 * Abrir o ficheiro de dados e criar uma lista de planetas e uma lista de
   estrelas. Os dados de cada estrela devem ser obtidos no ficheiro de dados a
@@ -68,7 +70,7 @@ deve ter as seguintes funcionalidades:
 
 ### Formas de implementação
 
-A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
+A aplicação pode ser implementada de forma interativa (Unity ou consola) **ou**
 não-interativa (apenas consola), tal como descrito nas secções seguintes.
 
 #### Aplicação interativa
@@ -105,10 +107,77 @@ ficheiro), bem como sair da aplicação.
 
 #### Aplicação não-interativa em consola
 
-Nesta versão a aplicação não tem qualquer UI, funcionando inteiramente com
-opções passadas na linha de comandos
+Nesta versão a aplicação não tem qualquer UI, funcionando inteiramente com as
+opções passadas na linha de comandos. Deve ter toda a funcionalidade indicada
+em [Funcionamento da aplicação](#funcionamento-da-aplicação), escrevendo todo o
+seu _output_ no terminal, de seguida e sem paragens. Alguns exemplos (o nome
+exato das opções fica à escolha do aluno, mas convém serem óbvios):
 
-_Em construção_
+```bash
+# Procura por planetas com temperatura entre 150 e 400 Kelvin e mais pequenos
+# que a Terra
+dotnet run -p AstroFinder -- search-planets --eqt-min 150 --eqt-max 400 --rade-max 1.0
+
+# Procura por estrelas com pelo menos 2 mil milhões de anos e a uma distância
+# máxima de 5 parsecs do sistema solar
+dotnet run -p AstroFinder -- search-stars --age-min 2.0 --dist-max 5.0
+
+# Procura por planetas descobertos com o método de transito até ao ano 2010
+dotnet run -p AstroFinder -- search-planets --method "transit" --year-max 2010
+
+# Mostra informação detalhada sobre planeta Proxima Cen b (exoplaneta conhecido
+# mais próximo da Terra)
+dotnet run -p AstroFinder -- planet-info "proxima cen b"
+```
+
+Por omissão, o _output_ deve ser aparecer formatado e fácil de ler, em forma de
+lista (mesmo que se pretenda apenas a informação sobre um planeta ou estrela,
+caso no qual a lista a apresentar terá tamanho 1). No caso do último comando, o
+_output_ poderia ser algo do género:
+
+
+```
+Planet name     Star name      Disc. method     Year    Orbital         Radius      Mass        Eq. Temp.
+                                                        Period (days)   (vs Earth)  (vs Earth)   (Kelvin)
+---------------------------------------------------------------------------------------------------------
+Proxima Cen b   Proxima Cen    Radial Veloc...  2016           11.186          N/A        1.27        234
+```
+
+Deve ainda existir uma opção (por exemplo, `--csv`) para formatar os dados
+exatamente de acordo com o formato dos ficheiros de entrada. No caso anterior
+seria:
+
+```
+pl_name,hostname,discoverymethod,disc_year,pl_orbper,pl_rade,pl_masse,pl_eqt
+Proxima Cen b,Proxima Cen,Radial Velocity,2016,11.186,,1.27,234
+```
+
+Atenção que não é necessário gravar este _output_ para um ficheiro. Para isso
+bastaria executar a aplicação da seguinte forma (repetindo o exemplo anterior):
+
+```bash
+dotnet run -p AstroFinder -- planet-info "proxima cen b" >  output.csv
+```
+
+Deve ser possível voltar a abrir o ficheiro criado com a aplicação, exceto no
+caso da procura de estrelas, que geraria um ficheiro incompatível.
+
+Caso o grupo opte pela implementação não-interativa, deve existir um _help_ por
+omissão que descreva todas as opções possíveis. Além disso, o relatório deve
+conter uma tabela com a descrição de todas as opções.
+
+Uma abordagem flexível para tratamento de opções de linha de comando está
+disponível no [2º projeto de LP1 2018/19]. Uma opção mais avançada, mas muito
+mais rápida após a curva de aprendizagem, é usar a biblioteca [Command Line
+Parser][CLParserLib], que funciona com atributos. Para fazerem uso desta
+biblioteca basta executarem o seguinte comando na pasta do vosso projeto (ou
+seja, na pasta que contém o ficheiro `.csproj`):
+
+```bash
+dotnet add package CommandLineParser --version 2.8.0
+```
+
+A partir desse momento podem fazer `using` dos _namespaces_ da biblioteca.
 
 ### Versão avançada
 
@@ -459,8 +528,6 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]*
 ## Licenças
 
 * Este enunciado é disponibilizado através da licença [CC BY-NC-SA 4.0].
-* O código exemplo é disponibilizado através da licença
-  [Mozilla Public License 2.0][MPL2].
 
 ## Metadados
 
@@ -470,7 +537,6 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]*
 
 [LINQ]:https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
-[MPL2]:https://www.mozilla.org/en-US/MPL/2.0/
 [lamv]:https://www.ulusofona.pt/licenciatura/videojogos
 [Nuno Fachada]:https://github.com/fakenmc
 [ULHT]:https://www.ulusofona.pt/
@@ -483,24 +549,15 @@ Estruturas de Dados][aed] do [Instituto Superior Técnico][ist]*
 [KISS]:https://en.wikipedia.org/wiki/KISS_principle
 [CSV]:https://en.wikipedia.org/wiki/Comma-separated_values
 [XML]:https://docs.microsoft.com/dotnet/csharp/codedoc
-[`Process`]:https://docs.microsoft.com/dotnet/api/system.diagnostics.process
-[`Environment`]:https://docs.microsoft.com/dotnet/api/system.environment
-[`Path`]:https://docs.microsoft.com/dotnet/api/system.io.path
 [Rainbow CSV]:https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv
-[GZipStream]:https://docs.microsoft.com/dotnet/api/system.io.compression.gzipstream
-[StreamReader]:https://docs.microsoft.com/dotnet/api/system.io.streamreader
 [ListSizeCtor]:https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.-ctor#System_Collections_Generic_List_1__ctor_System_Int32_
 [Join()]:https://docs.microsoft.com/dotnet/api/system.linq.enumerable.join
 [join]:https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/join-clause
 [2º projeto de LP1 2018/19]:https://github.com/VideojogosLusofona/lp1_2018_p2_solucao
-[fases de desenvolvimento]:#fases-de-desenvolvimento
-[Fase 1]:#fase-1-pesquisa-de-títulos-básica
-[Fase 2]:#fase-2-pesquisa-de-títulos-com-classificação
-[Fase 3]:#fase-3-ligação-entre-séries-e-os-respetivos-episódios
-[Fase 4]:#fase-4-pesquisa-de-pessoas
 [orgclasses]:#organização-do-projeto-e-estrutura-de-classes
 [objetivos]:#objetivos-e-critério-de-avaliação
 [NASAexo]:https://exoplanetarchive.ipac.caltech.edu/
 [NASAexoData]:https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS&constraint=default_flag=1
 [CSV Rainbow]:https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv
 [LibreOffice Calc]:https://www.libreoffice.org/download/download
+[CLParserLib]:https://github.com/commandlineparser/commandline
