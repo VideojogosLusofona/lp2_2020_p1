@@ -111,7 +111,7 @@ Format", "Download Currently Checked Columns", "Download Checked (and Filtered)
 Rows", "Values Only (no errors, limits, etc.)" e clicando na opção "Download
 Table".
 
-Está também incluído outro [ficheiro de teste](teste.csv) neste repositório,
+Está também incluído outro [ficheiro de teste](test.csv) neste repositório,
 igualmente válido (ver secção seguinte).
 
 ### Formato do ficheiro
