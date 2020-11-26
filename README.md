@@ -30,15 +30,15 @@ discussão do projeto incidirá essencialmente na forma como construíram as
 
 ## Funcionamento da aplicação
 
-A versão standard da aplicação deve permitir fazer pesquisas a **planetas** e
+A fase standard da aplicação deve permitir fazer pesquisas a **planetas** e
 **estrelas**, separadamente, e terá uma nota máxima de 2.5 valores (em 3
-possíveis). A [versão avançada](#versão-avançada) requer que as pesquisas possam
+possíveis). A [fase avançada](#fase-avançada) requer que as pesquisas possam
 ser feitas com campos de planetas e estrelas ao mesmo tempo (por exemplo, listar
 todos os planetas que orbitam uma estrela 10x maior que o sol).
 
 A aplicação pode ser implementada de forma interativa (Unity ou consola) ou
 não-interativa (apenas consola), tal como descrito em [Formas de
-implementação](#formas-de-implementação). Em qualquer dos casos, a aplicação
+implementação](#formas-de-implementação). Em qualquer dos casos, a fase
 standard (não avançada) deve ter as seguintes funcionalidades:
 
 * Abrir o ficheiro de dados e criar uma lista de planetas e uma lista de
@@ -46,10 +46,11 @@ standard (não avançada) deve ter as seguintes funcionalidades:
   partir dos planetas que as orbitam (ver secção [Campos de
   interesse](#campos-de-interesse)).
 * Fazer pesquisas por planetas usando os campos específicos de planeta.
-  * Na [versão avançada](#versão-avançada) deve ser possível também incluir
+  * Na [fase avançada](#fase-avançada) deve ser possível também incluir
     campos de estrela na pesquisa de planetas.
-* Fazer pesquisas por estrelas usando os campos específicos de estrela.
-  * Na [versão avançada](#versão-avançada) deve ser possível também incluir
+* Fazer pesquisas por estrelas usando os campos específicos de estrela e também
+  por número de planetas na estrela.
+  * Na [fase avançada](#fase-avançada) deve ser possível também incluir
     campos de planeta na pesquisa de estrelas.
 * Os campos numéricos devem permitir especificar um valor de pesquisa mínimo e
   um valor de pesquisa máximo.
@@ -179,40 +180,32 @@ dotnet add package CommandLineParser --version 2.8.0
 
 A partir desse momento podem fazer `using` dos _namespaces_ da biblioteca.
 
-### Versão avançada
+### Fase avançada
 
-_Em construção_
+A fase avançada do projeto permite ultrapassar a limitação de 2.5 valores.
+Nesta fase as pesquisas por planetas devem poder ser feitas com campos
+pertencentes às estrelas e vice-versa. Alguns exemplo:
 
-<!--
+* Procurar por planetas com temperatura inferior a 1000K e cuja estrela seja
+  mais antiga que 1.5 mil milhões de anos.
+* Procurar por estrelas entre 0.5 a 1.5 raios solares e que tenham planetas
+  com temperaturas entre 200 e 300K.
 
-Fase avançada: pesquisa em várias tabelas
+Para realizar este tipo de pesquisas poderá ser necessário recorrer ao método
+[Join()] (também disponível na forma de [expressão de *query*][join]),
+dependendo de como a aplicação estiver estruturada.
 
-Permite ultrapassar a limitação de 2.5 valores.
+Adicionalmente, caso seja implementada a versão interativa, devem ser
+implementadas as seguintes funcionalidades:
 
-Misturar pesquisa de planetas com dados de estrelas e vice-versa.
-
-Além disso, não
-incluí código importante a nível do LINQ para fases posteriores, nomeadamente o
-método [Join()] (também disponível na forma de [expressão de *query*][join]).
-
-
-No caso de planetas, deve existir a opção de ver os detalhes da
-estrela associada. No caso da estrela, deve existir a opção de ver uma lista
-dos planetas associados (na prática é realizada uma procura de planetas)
-
-
-Adicionalmente, o utilizador deve ter a opção de ver diretamente a estrela
-associada a um planeta, ou os planetas associados a uma estrela.
-
-Na tela de informação de uma estrela, deve existir a opção adicional de
-fazer uma pesquisa automática pelos respetivos planetas. Na lista
-"rolável" que aparecerá depois com os resultados desta procura, o utilizador
-poderá naturalmente clicar/selecionar um destes planetas, aparecendo então
-uma tela de informação sobre o planeta selecionado (que por sua vez tem a
-opção de ver a diretamente a tela de informação da sua estrela, e por ai fora).
-
-
--->
+* Na tela/janela que mostra a informação detalhada sobre um planeta, deve
+  existir a opção de ver os detalhes da estrela associada (abrindo uma nova
+  tela/janela com a informação sobre a estrela).
+* Na tela/janela que mostra a informação detalhada sobre uma estrela, deve
+  existir a opção de ver uma lista dos planetas associados, sendo na prática
+  realizada uma procura de planetas que pertencem a essa estrela.
+* Esta funcionalidade é iterativa ou recursiva, podendo o utilizador andar para
+  trás e para a frente nestes ecrãs e pesquisas.
 
 ### Compatibilidade
 
@@ -297,6 +290,11 @@ que encontrar ou ir substituíndo a mesma à medida que novos planetas
 pertencentes à mesma estrela vão aparecendo. No segundo caso, a aplicação deve
 tentar compor o máximo de informação sobre a estrela, mesmo que esta informação
 venha de diferentes planetas que a orbitam.
+
+Em qualquer dos casos, o número de planetas que uma estrela tem deve ser obtido
+a partir do número de planetas efetivamente lidos do ficheiro que pertençam a
+dada estrela, devendo ser ignorado o campo `sy_pnum`, caso esteja presente no
+ficheiro.
 
 ### Como abrir para visualização
 
