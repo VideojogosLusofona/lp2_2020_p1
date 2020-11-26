@@ -156,7 +156,7 @@ Atenção que não é necessário gravar este _output_ para um ficheiro. Para is
 bastaria executar a aplicação da seguinte forma (repetindo o exemplo anterior):
 
 ```bash
-dotnet run -p AstroFinder -- planet-info "proxima cen b" >  output.csv
+dotnet run -p AstroFinder -- planet-info "proxima cen b" --csv >  output.csv
 ```
 
 Deve ser possível voltar a abrir o ficheiro criado com a aplicação, exceto no
