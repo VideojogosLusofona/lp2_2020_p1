@@ -41,7 +41,7 @@ não-interativa (apenas consola), tal como descrito em [Formas de
 implementação](#formas-de-implementação). Em qualquer dos casos, a fase
 standard (não avançada) deve ter as seguintes funcionalidades:
 
-* Abrir o ficheiro de dados e criar uma lista de planetas e uma lista de
+* Abrir o ficheiro de dados e criar uma coleção de planetas e uma coleção de
   estrelas. Os dados de cada estrela devem ser obtidos no ficheiro de dados a
   partir dos planetas que as orbitam (ver secção [Campos de
   interesse](#campos-de-interesse)).
@@ -83,12 +83,12 @@ planetas e pesquisar estrelas. Selecionando uma das opções de pesquisa, deve
 então aparecer um UI que permita especificar os vários campos a filtrar, bem
 como indicar o(s) critério(s) de ordenação. Idealmente este UI terá espaço para
 a apresentação dos resultados, sendo possível alterar critérios de pesquisa
-e de ordenação
+e de ordenação e ver os resultados na mesma tela/janela.
 
 Os resultados devem aparecer na forma de uma lista, mostrando todos os campos de
 cada item. No caso dos planetas, a informação sobre a estrela deve resumir-se ao
 seu nome. No caso de estrelas, a informação sobre os seus planetas deve
-resumir-se ao seu número. Se o projeto for desenvolvido em consola, podem ser
+resumir-se à sua quantidade. Se o projeto for desenvolvido em consola, podem ser
 apresentados 20 ou 30 itens de cada vez, sendo necessário que o utilizador
 pressione uma tecla para ver os próximos 20/30 itens. Por outro lado, se se
 tratar de um projeto Unity, a lista de jogos deve ser *scrollable* ("rolável")
@@ -112,15 +112,15 @@ Nesta versão a aplicação não tem qualquer UI, funcionando inteiramente com a
 opções passadas na linha de comandos. Deve ter toda a funcionalidade indicada
 em [Funcionamento da aplicação](#funcionamento-da-aplicação), escrevendo todo o
 seu _output_ no terminal, de seguida e sem paragens. Alguns exemplos (o nome
-exato das opções fica à escolha do aluno, mas convém serem óbvios):
+exato das opções fica à escolha do grupo, mas convém serem óbvios):
 
 ```bash
 # Procura por planetas com temperatura entre 150 e 400 Kelvin e mais pequenos
 # que a Terra
 dotnet run -p AstroFinder -- search-planets --eqt-min 150 --eqt-max 400 --rade-max 1.0
 
-# Procura por estrelas com pelo menos 2 mil milhões de anos e a uma distância
-# máxima de 5 parsecs do sistema solar
+# Procura por estrelas com idade superior a 2 mil milhões de anos e a uma
+# distância máxima de 5 parsecs do sistema solar
 dotnet run -p AstroFinder -- search-stars --age-min 2.0 --dist-max 5.0
 
 # Procura por planetas descobertos com o método de transito até ao ano 2010
@@ -165,11 +165,11 @@ caso da procura de estrelas, que geraria um ficheiro incompatível.
 
 Caso o grupo opte pela implementação não-interativa, deve existir um _help_ por
 omissão que descreva todas as opções possíveis. Além disso, o relatório deve
-conter uma tabela com a descrição de todas as opções.
+conter uma tabela com a descrição destas opções.
 
 Uma abordagem flexível para tratamento de opções de linha de comando está
 disponível no [2º projeto de LP1 2018/19]. Uma opção mais avançada, mas muito
-mais rápida após a curva de aprendizagem, é usar a biblioteca [Command Line
+mais prática após a curva de aprendizagem, é usar a biblioteca [Command Line
 Parser][CLParserLib], que funciona com atributos. Para fazerem uso desta
 biblioteca basta executarem o seguinte comando na pasta do vosso projeto (ou
 seja, na pasta que contém o ficheiro `.csproj`):
@@ -183,17 +183,18 @@ A partir desse momento podem fazer `using` dos _namespaces_ da biblioteca.
 ### Fase avançada
 
 A fase avançada do projeto permite ultrapassar a limitação de 2.5 valores.
-Nesta fase as pesquisas por planetas devem poder ser feitas com campos
-pertencentes às estrelas e vice-versa. Alguns exemplo:
+Nesta fase as pesquisas por planetas devem incluir campos pertencentes às
+estrelas e vice-versa. Alguns exemplo:
 
-* Procurar por planetas com temperatura inferior a 1000K e cuja estrela seja
-  mais antiga que 1.5 mil milhões de anos.
-* Procurar por estrelas entre 0.5 a 1.5 raios solares e que tenham planetas
-  com temperaturas entre 200 e 300K.
+* Procurar por planetas com temperatura inferior a 1000K e cuja estrela tenha
+  uma idade superior a 1.5 mil milhões de anos.
+* Procurar por estrelas com raio entre 0.5 a 1.5 raios solares e que tenham
+  planetas com temperaturas entre 200 e 300K.
 
 Para realizar este tipo de pesquisas poderá ser necessário recorrer ao método
 [Join()] (também disponível na forma de [expressão de *query*][join]),
-dependendo de como a aplicação estiver estruturada.
+dependendo de como a aplicação estiver estruturada. De notar que é perfeitamente
+possível ter uma excelente solução sem o uso deste método.
 
 Adicionalmente, caso seja implementada a versão interativa, devem ser
 implementadas as seguintes funcionalidades:
@@ -233,10 +234,14 @@ desenvolvidos em Windows.
 ### Como obter
 
 O ficheiro com os dados sobre os exoplanetas deve ser obtido [neste
-link][NASAexoData], no menu "Download Table", selecionando as opções "CSV
-Format", "Download Currently Checked Columns", "Download Checked (and Filtered)
-Rows", "Values Only (no errors, limits, etc.)" e clicando na opção "Download
-Table".
+link][NASAexoData], no menu "Download Table", selecionando as seguintes opções:
+
+* _CSV Format_
+* _Download Currently Checked Columns_
+* _Download Checked (and Filtered) Rows_
+* _Values Only (no errors, limits, etc.)_
+
+O ficheiro é descarregado ao clicar na opção _Download Table_.
 
 Está também incluído outro [ficheiro de teste](test.csv) neste repositório,
 igualmente válido (ver secção seguinte).
@@ -273,7 +278,7 @@ restantes:
   anos).
 * `st_vsin` - Velocidade de rotação da estrela (em km/s).
 * `st_rotp` - Período de rotação da estrela (em dias).
-* `sy_dist` - Distância entre a Terra e a estrela (em Parsecs, sendo 1 Parsec ≈
+* `sy_dist` - Distância entre o Sol e a estrela (em Parsecs, sendo 1 Parsec ≈
   3,26 anos-luz).
 
 Os campos relativos à estrela referem-se à estrela que o planeta orbita. Esta
@@ -293,7 +298,7 @@ venha de diferentes planetas que a orbitam.
 
 Em qualquer dos casos, o número de planetas que uma estrela tem deve ser obtido
 a partir do número de planetas efetivamente lidos do ficheiro que pertençam a
-dada estrela, devendo ser ignorado o campo `sy_pnum`, caso esteja presente no
+essa estrela, devendo ser ignorado o campo `sy_pnum`, caso esteja presente no
 ficheiro.
 
 ### Como abrir para visualização
@@ -312,9 +317,12 @@ voltar ao formato original).
 Também é possível abrir o ficheiro para visualização no  [LibreOffice Calc],
 escolhendo apenas "Comma" (ou "Vírgula") como separador.
 
-O ficheiro não deve ser alterado, nem pelo projeto a desenvolver, nem
-manualmente. O ficheiro **não deve ser incluído na entrega do projeto**, **nem
-de alguma forma adicionado ao repositório Git**. Projetos que não cumpram esta
+O ficheiro não deve ser alterado pela aplicação a desenvolver, embora possa ser
+alterado externamente (e.g. com o Visual Studio Code) para fins de teste da
+aplicação.
+
+OS ficheiros de dados **não devem ser incluídos na entrega do projeto**, **nem
+de alguma forma adicionados ao repositório Git**. Projetos que não cumpram esta
 regra não serão avaliados.
 
 ### Como abrir os ficheiros na aplicação a desenvolver
@@ -373,14 +381,13 @@ desenvolvimento de qualquer aplicação.
 É de realçar que o uso de LINQ, Lambdas e *nullables* é essencial neste
 projeto.
 
-
 ### Sugestão para arquitetura do projeto
 
 Seja em consola ou Unity, um bom modelo para começar a organizar as classes
 deste projeto é o seguinte:
 
 * Uma classe controladora central que guia o programa. Tudo o que acontece
-  no programa tem início nesta classe.
+  no programa parte desta classe.
 * Uma classe exclusivamente dedicada ao UI.
 * Uma classe cuja responsabilidade é apenas abrir o ficheiro e produzir as
   coleções necessárias de planetas e estrelas.
@@ -399,17 +406,16 @@ fim, nomeadamente:
 
 * Os campos existentes em cada linha não necessários devem ser ignorados.
 * Devem ser utilizados tipos apropriados e o mais "pequenos" possível para cada
-  um dos campos. Por exemplo, para representar o ano de lançamento é mesmo
-  preciso um `int`? Para representar a letra de um planeta será mesmo preciso
-  uma `string`?
+  um dos campos. Por exemplo, para representar o ano de descoberta é mesmo
+  preciso um `int`?
 * As coleções usadas para guardar os dados devem ser pré-alocadas com o tamanho
   exato necessário. Por exemplo, as listas têm um [construtor][ListSizeCtor] que
   aceita como parâmetro o tamanho inicial da lista, e os _arrays_ são sempre
   pré-alocados.
-* No Unity, ao apresentarem os resultados de dada pesquisa, tenham cuidado com
-  a quantidade de resultados que injetam no UI. Demasiados resultados podem
-  prejudicar o desempenho e até *crashar* a aplicação. O [LINQ] tem formas de
-  devolver apenas alguns resultados de cada vez, evitando esta situação.
+* No Unity, ao apresentar os resultados de dada pesquisa, é necessário ter
+  cuidado com a quantidade de resultados injetada no UI. Demasiados resultados
+  podem prejudicar o desempenho e até *crashar* a aplicação. O [LINQ] tem formas
+  de devolver apenas alguns resultados de cada vez, evitando esta situação.
 
 ### Conversão e impressão de números reais
 
