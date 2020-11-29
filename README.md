@@ -343,7 +343,7 @@ regra não serão avaliados.
 * Se o ficheiro tiver alguma coluna de interesse em falta, a aplicação deve
   considerar que essa informação não existe para todos os planetas e/ou
   estrelas.
-* Se algum campo não estiver vazio para dado planeta/estrela, a aplicação
+* Se algum campo estiver vazio para dado planeta/estrela, a aplicação
   deve considerar que essa informação não existe para esse planeta (ou estrela)
   em particular.
 * Cada campo de interesse que estiver disponível deve ser convertível para o seu
