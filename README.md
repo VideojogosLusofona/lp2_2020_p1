@@ -117,18 +117,18 @@ exato das opções fica à escolha do grupo, mas convém serem óbvios):
 ```bash
 # Procura por planetas com temperatura entre 150 e 400 Kelvin e mais pequenos
 # que a Terra
-dotnet run -p AstroFinder -- search-planets --eqt-min 150 --eqt-max 400 --rade-max 1.0
+dotnet run -p AstroFinder -- search-planets --file nome_do_ficheiro.csv --eqt-min 150 --eqt-max 400 --rade-max 1.0
 
 # Procura por estrelas com idade superior a 2 mil milhões de anos e a uma
 # distância máxima de 5 parsecs do sistema solar
-dotnet run -p AstroFinder -- search-stars --age-min 2.0 --dist-max 5.0
+dotnet run -p AstroFinder -- search-stars --file nome_do_ficheiro.csv --age-min 2.0 --dist-max 5.0
 
 # Procura por planetas descobertos com o método de transito até ao ano 2010
-dotnet run -p AstroFinder -- search-planets --method "transit" --year-max 2010
+dotnet run -p AstroFinder -- search-planets --file nome_do_ficheiro.csv --method "transit" --year-max 2010
 
 # Mostra informação detalhada sobre planeta Proxima Cen b (exoplaneta conhecido
 # mais próximo da Terra)
-dotnet run -p AstroFinder -- planet-info "proxima cen b"
+dotnet run -p AstroFinder -- planet-info --file nome_do_ficheiro.csv --pl_name "proxima cen b"
 ```
 
 Por omissão, o _output_ deve aparecer formatado e fácil de ler, em forma de
@@ -157,7 +157,7 @@ Atenção que não é necessário gravar este _output_ para um ficheiro. Para is
 bastaria executar a aplicação da seguinte forma (repetindo o exemplo anterior):
 
 ```bash
-dotnet run -p AstroFinder -- planet-info "proxima cen b" --csv >  output.csv
+dotnet run -p AstroFinder -- planet-info --file nome_do_ficheiro.csv --pl_name "proxima cen b" --csv >  output.csv
 ```
 
 Deve ser possível voltar a abrir o ficheiro criado com a aplicação, exceto no
