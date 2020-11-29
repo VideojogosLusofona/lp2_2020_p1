@@ -237,7 +237,7 @@ O ficheiro com os dados sobre os exoplanetas deve ser obtido [neste
 link][NASAexoData], no menu "Download Table", selecionando as seguintes opções:
 
 * _CSV Format_
-* _Download Currently Checked Columns_
+* _Download All Columns_
 * _Download Checked (and Filtered) Rows_
 * _Values Only (no errors, limits, etc.)_
 
