@@ -1,4 +1,4 @@
-# Ficheiro teste para LP2
+# Ficheiro teste para LP2, valido
 pl_name,hostname,disc_year,pl_orbper,,discoverymethod,pl_bmasse,st_teff,pl_bmassj,st_rad,sy_dist,sy_vmag,sy_kmag,dec,sy_gaiamag
 6 Lyn b,6 Lyn,2008,934.3,,Radial Velocity,638.8383,4938,2.01,5.2,54.6599,5.87307,3.701,58.1611753,5.60686
 61 Vir b,61 Vir,2009,4.215,,Radial Velocity,5.1,5577,0.016,0.96,8.50332,4.6955,2.956,-18.3157745,4.54052

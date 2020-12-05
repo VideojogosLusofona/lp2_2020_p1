@@ -243,8 +243,8 @@ link][NASAexoData], no menu "Download Table", selecionando as seguintes opções
 
 O ficheiro é descarregado ao clicar na opção _Download Table_.
 
-Está também incluído outro [ficheiro de teste](test.csv) neste repositório,
-igualmente válido (ver secção seguinte).
+Estão também incluídos vários [ficheiros de teste](input_tests) neste
+repositório, metade dos quais válidos (ver secção seguinte).
 
 ### Formato do ficheiro
 

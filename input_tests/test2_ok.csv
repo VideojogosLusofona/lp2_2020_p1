@@ -1,0 +1,489 @@
+# Ficheiro teste para LP2, valido
+hostname,pl_name
+6 Lyn,6 Lyn b
+61 Vir,61 Vir b
+61 Vir,61 Vir c
+61 Vir,61 Vir d
+7 CMa,7 CMa b
+7 CMa,7 CMa c
+70 Vir,70 Vir b
+75 Cet,75 Cet b
+8 UMi,8 UMi b
+81 Cet,81 Cet b
+91 Aqr,91 Aqr b
+AB Pic,AB Pic b
+BD+14 4559,BD+14 4559 b
+BD+15 2375,BD+15 2375 b
+BD+15 2940,BD+15 2940 b
+BD+20 2457,BD+20 2457 b
+BD+20 2457,BD+20 2457 c
+BD+20 274,BD+20 274 b
+BD+20 594,BD+20 594 b
+BD+48 738,BD+48 738 b
+BD+48 740,BD+48 740 b
+BD+49 828,BD+49 828 b
+BD-06 1339,BD-06 1339 b
+BD-06 1339,BD-06 1339 c
+BD-08 2823,BD-08 2823 b
+BD-08 2823,BD-08 2823 c
+BD-10 3166,BD-10 3166 b
+BD-11 4672,BD-11 4672 b
+BD-11 4672,BD-11 4672 c
+BD-13 2130,BD-13 2130 b
+CI Tau,CI Tau b
+CT Cha,CT Cha b
+CoRoT-1,CoRoT-1 b
+CoRoT-10,CoRoT-10 b
+CoRoT-11,CoRoT-11 b
+CoRoT-12,CoRoT-12 b
+CoRoT-13,CoRoT-13 b
+CoRoT-14,CoRoT-14 b
+CoRoT-16,CoRoT-16 b
+CoRoT-17,CoRoT-17 b
+CoRoT-18,CoRoT-18 b
+CoRoT-19,CoRoT-19 b
+CoRoT-2,CoRoT-2 b
+CoRoT-20,CoRoT-20 b
+CoRoT-20,CoRoT-20 c
+CoRoT-21,CoRoT-21 b
+CoRoT-22,CoRoT-22 b
+CoRoT-23,CoRoT-23 b
+CoRoT-24,CoRoT-24 b
+CoRoT-24,CoRoT-24 c
+CoRoT-25,CoRoT-25 b
+CoRoT-26,CoRoT-26 b
+CoRoT-27,CoRoT-27 b
+CoRoT-28,CoRoT-28 b
+CoRoT-29,CoRoT-29 b
+CoRoT-3,CoRoT-3 b
+CoRoT-30,CoRoT-30 b
+CoRoT-31,CoRoT-31 b
+CoRoT-4,CoRoT-4 b
+CoRoT-5,CoRoT-5 b
+CoRoT-6,CoRoT-6 b
+CoRoT-7,CoRoT-7 b
+CoRoT-7,CoRoT-7 c
+CoRoT-8,CoRoT-8 b
+CoRoT-9,CoRoT-9 b
+CoRoTID 223977153,CoRoTID 223977153 b
+DE CVn,DE CVn b
+DENIS-P J082303.1-491201,DENIS-P J082303.1-491201 b
+DMPP-1,DMPP-1 d
+DMPP-1,DMPP-1 e
+DMPP-2,DMPP-2 b
+DMPP-3 A,DMPP-3 A b
+DP Leo,DP Leo b
+DS Tuc A,DS Tuc A b
+EPIC 201170410,EPIC 201170410.02
+EPIC 201238110,EPIC 201238110 b
+EPIC 201497682,EPIC 201497682 b
+K2-166,EPIC 201615463 c
+K2-16,EPIC 201754305 d
+EPIC 201757695,EPIC 201757695.02
+K2-50,EPIC 201833600 c
+EPIC 201841433,EPIC 201841433 b
+K2-168,EPIC 205950854 c
+EPIC 206024342,EPIC 206024342 b
+EPIC 206032309,EPIC 206032309 b
+EPIC 206042996,EPIC 206042996 b
+EPIC 206215704,EPIC 206215704 b
+EPIC 206317286,EPIC 206317286 b
+EPIC 211822797,EPIC 211822797 b
+EPIC 211945201,EPIC 211945201 b
+EPIC 212297394,EPIC 212297394 b
+EPIC 212424622,EPIC 212424622 b
+EPIC 212499991,EPIC 212499991 b
+EPIC 212587672,EPIC 212587672 b
+EPIC 212737443,EPIC 212737443 b
+EPIC 212737443,EPIC 212737443 c
+K2-282,EPIC 220554210 c
+EPIC 220674823,EPIC 220674823 b
+EPIC 220674823,EPIC 220674823 c
+EPIC 246193072,EPIC 246193072 b
+EPIC 246851721,EPIC 246851721 b
+EPIC 248847494,EPIC 248847494 b
+EPIC 249893012,EPIC 249893012 b
+EPIC 249893012,EPIC 249893012 c
+EPIC 249893012,EPIC 249893012 d
+FU Tau,FU Tau b
+G 9-40,G 9-40 b
+GJ 1061,GJ 1061 b
+GJ 1061,GJ 1061 c
+GJ 1061,GJ 1061 d
+GJ 1132,GJ 1132 b
+GJ 1132,GJ 1132 c
+GJ 1148,GJ 1148 b
+GJ 1148,GJ 1148 c
+GJ 1214,GJ 1214 b
+GJ 1252,GJ 1252 b
+GJ 1265,GJ 1265 b
+GJ 143,GJ 143 b
+GJ 15 A,GJ 15 A b
+GJ 15 A,GJ 15 A c
+GJ 160.2,GJ 160.2 b
+GJ 163,GJ 163 b
+GJ 163,GJ 163 c
+GJ 163,GJ 163 d
+GJ 179,GJ 179 b
+GJ 180,GJ 180 b
+GJ 180,GJ 180 c
+GJ 180,GJ 180 d
+GJ 2056,GJ 2056 b
+GJ 229,GJ 229 A c
+GJ 229,GJ 229 b
+GJ 27.1,GJ 27.1 b
+GJ 273,GJ 273 b
+GJ 273,GJ 273 c
+GJ 3021,GJ 3021 b
+GJ 3082,GJ 3082 b
+GJ 3138,GJ 3138 b
+GJ 3138,GJ 3138 c
+GJ 3138,GJ 3138 d
+GJ 317,GJ 317 b
+GJ 317,GJ 317 c
+GJ 328,GJ 328 b
+GJ 3293,GJ 3293 b
+GJ 3293,GJ 3293 c
+GJ 3293,GJ 3293 d
+GJ 3293,GJ 3293 e
+GJ 3323,GJ 3323 b
+GJ 3323,GJ 3323 c
+GJ 3341,GJ 3341 b
+GJ 338 B,GJ 338 B b
+GJ 3470,GJ 3470 b
+GJ 3473,GJ 3473 b
+GJ 3473,GJ 3473 c
+GJ 3512,GJ 3512 b
+GJ 357,GJ 357 b
+GJ 357,GJ 357 c
+GJ 357,GJ 357 d
+GJ 3634,GJ 3634 b
+GJ 3779,GJ 3779 b
+GJ 3942,GJ 3942 b
+GJ 3998,GJ 3998 b
+GJ 3998,GJ 3998 c
+GJ 411,GJ 411 b
+GJ 422,GJ 422 b
+GJ 4276,GJ 4276 b
+GJ 433,GJ 433 b
+GJ 433,GJ 433 c
+GJ 433,GJ 433 d
+GJ 436,GJ 436 b
+GJ 480,GJ 480 b
+GJ 504,GJ 504 b
+GJ 536,GJ 536 b
+GJ 581,GJ 581 b
+GJ 581,GJ 581 c
+GJ 581,GJ 581 e
+GJ 625,GJ 625 b
+GJ 649,GJ 649 b
+GJ 667 C,GJ 667 C b
+GJ 667 C,GJ 667 C c
+GJ 667 C,GJ 667 C e
+GJ 667 C,GJ 667 C f
+GJ 667 C,GJ 667 C g
+GJ 674,GJ 674 b
+GJ 676 A,GJ 676 A b
+GJ 676 A,GJ 676 A c
+GJ 676 A,GJ 676 A d
+GJ 676 A,GJ 676 A e
+GJ 682,GJ 682 b
+GJ 682,GJ 682 c
+GJ 685,GJ 685 b
+GJ 687,GJ 687 b
+GJ 687,GJ 687 c
+GJ 832,GJ 832 b
+GJ 832,GJ 832 c
+GJ 849,GJ 849 b
+GJ 86,GJ 86 b
+GJ 876,GJ 876 b
+GJ 876,GJ 876 c
+GJ 876,GJ 876 d
+GJ 876,GJ 876 e
+GJ 887,GJ 887 b
+Kepler-203,Kepler-203 b
+Kepler-203,Kepler-203 c
+Kepler-203,Kepler-203 d
+Kepler-204,Kepler-204 b
+Kepler-204,Kepler-204 c
+Kepler-205,Kepler-205 b
+Kepler-205,Kepler-205 c
+Kepler-206,Kepler-206 b
+Kepler-206,Kepler-206 c
+Kepler-206,Kepler-206 d
+Kepler-207,Kepler-207 b
+Kepler-207,Kepler-207 c
+Kepler-207,Kepler-207 d
+Kepler-208,Kepler-208 b
+Kepler-208,Kepler-208 c
+Kepler-208,Kepler-208 d
+Kepler-208,Kepler-208 e
+Kepler-209,Kepler-209 b
+Kepler-209,Kepler-209 c
+Kepler-21,Kepler-21 b
+Kepler-210,Kepler-210 b
+Kepler-210,Kepler-210 c
+Kepler-211,Kepler-211 b
+Kepler-211,Kepler-211 c
+Kepler-212,Kepler-212 b
+Kepler-212,Kepler-212 c
+Kepler-213,Kepler-213 b
+Kepler-213,Kepler-213 c
+Kepler-214,Kepler-214 b
+Kepler-214,Kepler-214 c
+Kepler-215,Kepler-215 b
+Kepler-215,Kepler-215 c
+Kepler-215,Kepler-215 d
+Kepler-215,Kepler-215 e
+Kepler-216,Kepler-216 b
+Kepler-216,Kepler-216 c
+Kepler-217,Kepler-217 b
+Kepler-217,Kepler-217 c
+Kepler-217,Kepler-217 d
+Kepler-218,Kepler-218 b
+Kepler-218,Kepler-218 c
+Kepler-218,Kepler-218 d
+Kepler-219,Kepler-219 b
+Kepler-219,Kepler-219 c
+Kepler-219,Kepler-219 d
+Kepler-22,Kepler-22 b
+Kepler-220,Kepler-220 b
+Kepler-220,Kepler-220 c
+Kepler-220,Kepler-220 d
+Kepler-220,Kepler-220 e
+Kepler-221,Kepler-221 b
+Kepler-221,Kepler-221 c
+Kepler-221,Kepler-221 d
+Kepler-221,Kepler-221 e
+Kepler-222,Kepler-222 b
+Kepler-222,Kepler-222 c
+Kepler-222,Kepler-222 d
+Kepler-223,Kepler-223 b
+Kepler-223,Kepler-223 c
+Kepler-223,Kepler-223 d
+Kepler-223,Kepler-223 e
+Kepler-224,Kepler-224 b
+Kepler-224,Kepler-224 c
+Kepler-224,Kepler-224 d
+Kepler-224,Kepler-224 e
+Kepler-225,Kepler-225 b
+Kepler-225,Kepler-225 c
+Kepler-226,Kepler-226 b
+Kepler-226,Kepler-226 c
+Kepler-226,Kepler-226 d
+Kepler-227,Kepler-227 b
+Kepler-227,Kepler-227 c
+Kepler-228,Kepler-228 b
+Kepler-228,Kepler-228 c
+Kepler-228,Kepler-228 d
+Kepler-229,Kepler-229 b
+Kepler-229,Kepler-229 c
+Kepler-229,Kepler-229 d
+Kepler-23,Kepler-23 b
+Kepler-23,Kepler-23 c
+Kepler-23,Kepler-23 d
+Kepler-230,Kepler-230 b
+Kepler-230,Kepler-230 c
+Kepler-231,Kepler-231 b
+Kepler-231,Kepler-231 c
+Kepler-232,Kepler-232 b
+Kepler-232,Kepler-232 c
+Kepler-233,Kepler-233 b
+Kepler-233,Kepler-233 c
+Kepler-234,Kepler-234 b
+Kepler-234,Kepler-234 c
+Kepler-235,Kepler-235 b
+Kepler-235,Kepler-235 c
+Kepler-235,Kepler-235 d
+Kepler-235,Kepler-235 e
+Kepler-236,Kepler-236 b
+Kepler-236,Kepler-236 c
+Kepler-237,Kepler-237 b
+Kepler-237,Kepler-237 c
+Kepler-238,Kepler-238 b
+Kepler-238,Kepler-238 c
+Kepler-238,Kepler-238 d
+Kepler-238,Kepler-238 e
+Kepler-238,Kepler-238 f
+Kepler-239,Kepler-239 b
+Kepler-239,Kepler-239 c
+Kepler-24,Kepler-24 b
+Kepler-24,Kepler-24 c
+Kepler-24,Kepler-24 d
+Kepler-24,Kepler-24 e
+Kepler-240,Kepler-240 b
+Kepler-240,Kepler-240 c
+PDS 70,PDS 70 b
+PDS 70,PDS 70 c
+PH1,PH1 b
+PH2,PH2 b
+POTS-1,POTS-1 b
+PSR B0329+54,PSR B0329+54 b
+PSR B1257+12,PSR B1257+12 b
+PSR B1257+12,PSR B1257+12 c
+PSR B1257+12,PSR B1257+12 d
+PSR B1620-26,PSR B1620-26 b
+PSR J1719-1438,PSR J1719-1438 b
+PSR J2322-2650,PSR J2322-2650 b
+Pr0201,Pr0201 b
+Pr0211,Pr0211 b
+Pr0211,Pr0211 c
+Proxima Cen,Proxima Cen b
+Qatar-1,Qatar-1 b
+Qatar-10,Qatar-10 b
+Qatar-2,Qatar-2 b
+Qatar-3,Qatar-3 b
+Qatar-4,Qatar-4 b
+Qatar-5,Qatar-5 b
+Qatar-6,Qatar-6 b
+Qatar-7,Qatar-7 b
+Qatar-8,Qatar-8 b
+Qatar-9,Qatar-9 b
+ROXs 12,ROXs 12 b
+ROXs 42 B,ROXs 42 B b
+RR Cae,RR Cae b
+Ross 128,Ross 128 b
+Ross 458,Ross 458 c
+SR 12 AB,SR 12 AB c
+SWEEPS-11,SWEEPS-11 b
+SWEEPS-4,SWEEPS-4 b
+TAP 26,TAP 26 b
+TCP J05074264+2447555,TCP J05074264+2447555 b
+TOI-1130,TOI-1130 b
+TOI-1130,TOI-1130 c
+TOI-1235,TOI-1235 b
+TOI-125,TOI-125 b
+TOI-125,TOI-125 c
+TOI-125,TOI-125 d
+TOI-1266,TOI-1266 b
+TOI-1266,TOI-1266 c
+TOI-132,TOI-132 b
+TOI-1338,TOI-1338 b
+TOI-150,TOI-150.01
+TOI-157,TOI-157 b
+TOI-163,TOI-163 b
+TOI-169,TOI-169 b
+TOI-172,TOI-172 b
+TOI-1728,TOI-1728 b
+TOI-1899,TOI-1899 b
+TOI-216,TOI-216.01
+TOI-216,TOI-216.02
+TOI-270,TOI-270 b
+TOI-270,TOI-270 c
+TOI-270,TOI-270 d
+TOI-421,TOI-421 b
+TOI-421,TOI-421 c
+TOI-540,TOI-540 b
+TOI-677,TOI-677 b
+TOI-700,TOI-700 b
+TOI-700,TOI-700 c
+TOI-700,TOI-700 d
+TOI-763,TOI-763 b
+TOI-763,TOI-763 c
+TOI-813,TOI-813 b
+TOI-824,TOI-824 b
+TOI-837,TOI-837 b
+TOI-849,TOI-849 b
+TOI-954,TOI-954 b
+TRAPPIST-1,TRAPPIST-1 b
+TRAPPIST-1,TRAPPIST-1 c
+TRAPPIST-1,TRAPPIST-1 d
+TRAPPIST-1,TRAPPIST-1 e
+TRAPPIST-1,TRAPPIST-1 f
+TRAPPIST-1,TRAPPIST-1 g
+TRAPPIST-1,TRAPPIST-1 h
+TYC 1422-614-1,TYC 1422-614-1 b
+TYC 1422-614-1,TYC 1422-614-1 c
+TYC 3318-01333-1,TYC 3318-01333-1 b
+TYC 3667-1280-1,TYC 3667-1280-1 b
+TYC 4282-00605-1,TYC 4282-00605-1 b
+TYC 8998-760-1,TYC 8998-760-1 b
+TYC 8998-760-1,TYC 8998-760-1 c
+Teegarden's Star,Teegarden's Star b
+Teegarden's Star,Teegarden's Star c
+TrES-1,TrES-1 b
+TrES-2,TrES-2 b
+TrES-3,TrES-3 b
+TrES-4,TrES-4 b
+TrES-5,TrES-5 b
+UKIRT-2017-BLG-001L,UKIRT-2017-BLG-001L b
+USco CTIO 108,USco CTIO 108 b
+USco1556 A,USco1556 b
+USco1621 A,USco1621 b
+UZ For,UZ For b
+UZ For,UZ For c
+V0391 Peg,V0391 Peg b
+V1298 Tau,V1298 Tau b
+V1298 Tau,V1298 Tau c
+V1298 Tau,V1298 Tau d
+V1298 Tau,V1298 Tau e
+V830 Tau,V830 Tau b
+VHS J125601.92-125723.9,VHS J125601.92-125723.9 b
+WASP-1,WASP-1 b
+WASP-10,WASP-10 b
+WASP-100,WASP-100 b
+WASP-101,WASP-101 b
+WASP-103,WASP-103 b
+WASP-104,WASP-104 b
+WASP-105,WASP-105 b
+WASP-106,WASP-106 b
+WASP-107,WASP-107 b
+WD 0806-661,WD 0806-661 b
+WD 1856+534,WD 1856+534 b
+WISEP J121756.91+162640.2 A,WISEP J121756.91+162640.2 A b
+WTS-1,WTS-1 b
+WTS-2,WTS-2 b
+Wendelstein-1,Wendelstein-1 b
+Wendelstein-2,Wendelstein-2 b
+Wolf 1061,Wolf 1061 b
+Wolf 1061,Wolf 1061 c
+Wolf 1061,Wolf 1061 d
+Wolf 503,Wolf 503 b
+XO-1,XO-1 b
+XO-2 N,XO-2 N b
+XO-2 S,XO-2 S b
+XO-2 S,XO-2 S c
+XO-3,XO-3 b
+XO-4,XO-4 b
+XO-5,XO-5 b
+XO-6,XO-6 b
+XO-7,XO-7 b
+YZ Cet,YZ Cet b
+YZ Cet,YZ Cet c
+YZ Cet,YZ Cet d
+alf Ari,alf Ari b
+alf Tau,alf Tau b
+bet Cnc,bet Cnc b
+bet Pic,bet Pic b
+bet Pic,bet Pic c
+bet UMi,bet UMi b
+eps CrB,eps CrB b
+eps Eri,eps Eri b
+eps Ind A,eps Ind A b
+eps Tau,eps Tau b
+gam 1 Leo,gam 1 Leo b
+gam Cep,gam Cep b
+gam Lib,gam Lib b
+gam Lib,gam Lib c
+iot Dra,iot Dra b
+kap And,kap And b
+kap CrB,kap CrB b
+mu Leo,mu Leo b
+nu Oph,nu Oph b
+nu Oph,nu Oph c
+ome Ser,ome Ser b
+omi CrB,omi CrB b
+omi UMa,omi UMa b
+HD 39091,pi Men c
+psi 1 Dra B,psi 1 Dra B b
+rho CrB,rho CrB b
+rho CrB,rho CrB c
+tau Boo,tau Boo b
+tau Cet,tau Cet e
+tau Cet,tau Cet f
+tau Cet,tau Cet g
+tau Cet,tau Cet h
+tau Gem,tau Gem b
+ups And,ups And b
+ups And,ups And c
+ups And,ups And d
