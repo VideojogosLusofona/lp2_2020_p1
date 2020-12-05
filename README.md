@@ -132,10 +132,17 @@ dotnet run -p AstroFinder -- planet-info --file nome_do_ficheiro.csv --pl_name "
 ```
 
 Por omissão, o _output_ deve aparecer formatado e fácil de ler, em forma de
-lista (mesmo que se pretenda apenas a informação sobre um planeta ou estrela,
-caso no qual a lista a apresentar terá tamanho 1). No caso do último comando, o
-_output_ poderia ser algo do género:
+lista, e deve conter todos os campos de interesse de forma semelhante à
+[aplicação interativa](#aplicação-interativa), ou seja:
 
+> Os resultados devem aparecer na forma de uma lista, mostrando todos os campos
+> de cada item. No caso dos planetas, a informação sobre a estrela deve
+> resumir-se ao seu nome. No caso de estrelas, a informação sobre os seus
+> planetas deve resumir-se à sua quantidade.
+
+Mesmo que se pretenda apenas a informação sobre um planeta ou estrela, a
+informação a produzir é semelhante, mas a lista a apresentar terá tamanho 1. No
+caso do último comando dado como exemplo, o _output_ poderia ser algo do género:
 
 ```
 Planet name     Star name      Disc. method     Year    Orbital         Radius      Mass        Eq. Temp.
