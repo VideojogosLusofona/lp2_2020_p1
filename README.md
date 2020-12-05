@@ -148,7 +148,7 @@ caso do último comando dado como exemplo, o _output_ poderia ser algo do géner
 Planet name     Star name      Disc. method     Year    Orbital         Radius      Mass        Eq. Temp.
                                                         Period (days)   (vs Earth)  (vs Earth)   (Kelvin)
 ---------------------------------------------------------------------------------------------------------
-Proxima Cen b   Proxima Cen    Radial Veloc...  2016           11.186          N/A        1.27        234
+Proxima Cen b   Proxima Cen    Radial Veloc...  2016           11.186          N/A        N/A        234
 ```
 
 Deve ainda existir uma opção (por exemplo, `--csv`) para formatar os dados
@@ -157,7 +157,7 @@ seria:
 
 ```
 pl_name,hostname,discoverymethod,disc_year,pl_orbper,pl_rade,pl_masse,pl_eqt
-Proxima Cen b,Proxima Cen,Radial Velocity,2016,11.186,,1.27,234
+Proxima Cen b,Proxima Cen,Radial Velocity,2016,11.186,,,234
 ```
 
 Atenção que não é necessário gravar este _output_ para um ficheiro. Para isso
