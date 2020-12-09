@@ -111,8 +111,9 @@ ficheiro), bem como sair da aplicação.
 Nesta versão a aplicação não tem qualquer UI, funcionando inteiramente com as
 opções passadas na linha de comandos. Deve ter toda a funcionalidade indicada
 em [Funcionamento da aplicação](#funcionamento-da-aplicação), escrevendo todo o
-seu _output_ no terminal, de seguida e sem paragens. Alguns exemplos (o nome
-exato das opções fica à escolha do grupo, mas convém serem óbvios):
+seu _output_ no terminal, de seguida e sem paragens. Alguns exemplos assumindo
+que o projeto se chama `AstroFinder` (o nome exato das opções fica à escolha do
+grupo, mas convém serem óbvios):
 
 ```bash
 # Procura por planetas com temperatura entre 150 e 400 Kelvin e mais pequenos
@@ -126,9 +127,9 @@ dotnet run -p AstroFinder -- search-stars --file nome_do_ficheiro.csv --age-min 
 # Procura por planetas descobertos com o método de transito até ao ano 2010
 dotnet run -p AstroFinder -- search-planets --file nome_do_ficheiro.csv --method "transit" --year-max 2010
 
-# Mostra informação detalhada sobre planeta Proxima Cen b (exoplaneta conhecido
-# mais próximo da Terra)
-dotnet run -p AstroFinder -- planet-info --file nome_do_ficheiro.csv --pl_name "proxima cen b"
+# Mostra informação sobre planeta Proxima Cen b (exoplaneta conhecido mais
+# próximo da Terra)
+dotnet run -p AstroFinder -- search-planets --file nome_do_ficheiro.csv --pl_name "proxima cen b"
 ```
 
 Por omissão, o _output_ deve aparecer formatado e fácil de ler, em forma de
@@ -140,9 +141,8 @@ lista, e deve conter todos os campos de interesse de forma semelhante à
 > resumir-se ao seu nome. No caso de estrelas, a informação sobre os seus
 > planetas deve resumir-se à sua quantidade.
 
-Mesmo que se pretenda apenas a informação sobre um planeta ou estrela, a
-informação a produzir é semelhante, mas a lista a apresentar terá tamanho 1. No
-caso do último comando dado como exemplo, o _output_ poderia ser algo do género:
+No caso do último comando dado como exemplo, o _output_ poderia ser algo do
+género:
 
 ```
 Planet name     Star name      Disc. method     Year    Orbital         Radius      Mass        Eq. Temp.
@@ -164,7 +164,7 @@ Atenção que não é necessário gravar este _output_ para um ficheiro. Para is
 bastaria executar a aplicação da seguinte forma (repetindo o exemplo anterior):
 
 ```bash
-dotnet run -p AstroFinder -- planet-info --file nome_do_ficheiro.csv --pl_name "proxima cen b" --csv >  output.csv
+dotnet run -p AstroFinder -- search-planets --file nome_do_ficheiro.csv --pl_name "proxima cen b" --csv >  output.csv
 ```
 
 Deve ser possível voltar a abrir o ficheiro criado com a aplicação, exceto no
